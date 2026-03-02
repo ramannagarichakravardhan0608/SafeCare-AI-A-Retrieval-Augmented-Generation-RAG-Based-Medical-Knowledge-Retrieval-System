@@ -1,0 +1,12 @@
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-core==0.2.41
+langchain-text-splitters==0.2.4
+langchain-huggingface==0.0.3
+sentence-transformers
+faiss-cpu
+streamlit
+transformers
+torch
+accelerate
+pypdf

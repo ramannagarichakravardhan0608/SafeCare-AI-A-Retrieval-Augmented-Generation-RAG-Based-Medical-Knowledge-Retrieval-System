@@ -1,0 +1,17 @@
+Document
+↓
+Text Splitter
+↓
+Add chunk_id
+↓
+Embeddings
+↓
+FAISS
+↓
+Similarity Search
+↓
+Retrieve (chunk_id + content)
+↓
+Send to HuggingFace LLM
+↓
+Answer + chunk_id shown
