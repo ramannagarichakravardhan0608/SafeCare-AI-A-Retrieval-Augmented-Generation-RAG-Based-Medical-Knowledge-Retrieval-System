@@ -15,7 +15,6 @@ client = InferenceClient(
 
 st.set_page_config(page_title="SafeCare AI", page_icon="💬", layout="wide")
 
-# ---------------- SIDEBAR ---------------- #
 with st.sidebar:
     st.title("📘 SafeCare Assistant")
     st.markdown("### 🔍 RAG Based Chatbot")
@@ -31,7 +30,6 @@ with st.sidebar:
 
 st.title("💬 SafeCare Document Assistant")
 
-# ---------------- LOAD VECTORSTORE ---------------- #
 @st.cache_resource
 def load_vectorstore():
     embeddings = HuggingFaceEmbeddings(
@@ -46,11 +44,9 @@ def load_vectorstore():
 
 db = load_vectorstore()
 
-# ---------------- SESSION STATE ---------------- #
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# ---------------- DISPLAY CHAT ---------------- #
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
@@ -60,11 +56,10 @@ for message in st.session_state.messages:
                 st.write("**Chunk IDs:**", message["chunk_ids"])
                 st.write("**Similarity Scores:**", message["scores"])
 
-# ---------------- USER INPUT ---------------- #
 query = st.chat_input("Ask something about the document...")
 
 if query:
-    # Show user message
+    
     st.session_state.messages.append(
         {"role": "user", "content": query}
     )
@@ -114,7 +109,7 @@ Question:
 
             st.markdown(answer)
 
-    # Save assistant response
+
     st.session_state.messages.append(
         {
             "role": "assistant",
