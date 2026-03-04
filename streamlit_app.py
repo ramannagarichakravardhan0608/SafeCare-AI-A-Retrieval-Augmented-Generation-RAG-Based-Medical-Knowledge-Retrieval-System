@@ -28,7 +28,7 @@ with st.sidebar:
         st.session_state.messages = []
         st.rerun()
 
-st.title("💬 SafeCare Document Assistant")
+st.title("💬 SafeCare – Medical Knowledge Retrieval System")
 
 @st.cache_resource
 def load_vectorstore():
